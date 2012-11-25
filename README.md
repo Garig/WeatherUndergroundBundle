@@ -11,7 +11,7 @@ This Bundle enables integration [Weather Underground API](http://www.wundergroun
 Installation
 ============
 
-1. Add this bundle and kriswallsmith [Buzz](https://github.com/kriswallsmith/Buzz) library to `composer.json` in your project to `require` section:
+### Add this bundle and kriswallsmith [Buzz](https://github.com/kriswallsmith/Buzz) library to `composer.json` in your project to `require` section:
 
 ````
 ...
@@ -22,7 +22,7 @@ Installation
 ...
 ````
 
-2. Add this bundle to your application's kernel:
+### Add this bundle to your application's kernel:
 
 ````
 //app/AppKernel.php
@@ -36,7 +36,7 @@ public function registerBundles()
 }
 ````
 
-3. Configure the `weather_underground` service in your YAML configuration:
+### Configure the `weather_underground` service in your YAML configuration:
 
 ````
 #app/config/config.yml
