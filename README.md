@@ -52,6 +52,7 @@ weather_underground:
     format: json                                                # json/xml
     host_data_features: http://api.wunderground.com             # default: http://api.wunderground.com
     host_autocomlete: http://autocomplete.wunderground.com      # default: http://autocomplete.wunderground.com
+````
 
 Usage example
 ============
@@ -141,4 +142,5 @@ Weather Underground API Documentation
 ============
 
 [Data Features](http://www.wunderground.com/weather/api/d/docs?d=data/index)
+
 [AutoComplete API](http://www.wunderground.com/weather/api/d/docs?d=autocomplete-api)
