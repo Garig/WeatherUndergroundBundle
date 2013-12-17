@@ -59,12 +59,12 @@ class AutoComplete
     public function setOptions(array $options)
     {
         if (count($options) == 0) {
-            throw \Exception('Not set any options');
+            throw new \Exception('Not set any options');
         }
 
         foreach ($options as $name => $value) {
             if (false === in_array($name, $this->availOptions)) {
-                throw \Exception(sprintf('Option \'%s\' not available in API', $name));
+                throw new \Exception(sprintf('Option \'%s\' not available in API', $name));
             }
 
             $this->options[$name] = $value;
@@ -136,7 +136,7 @@ class AutoComplete
     protected function getDataResourse()
     {
         if (count($this->options) == 0) {
-            throw \Exception("Don't set options! Use setOptions() method.");
+            throw new \Exception("Don't set options! Use setOptions() method.");
         }
 
         return '/aq?' . http_build_query($this->options);
