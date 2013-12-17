@@ -95,7 +95,7 @@ class DataFeatures
     public function setFeatures(array $features)
     {
         if (count($features) == 0) {
-            throw \Exception('Not set any features');
+            throw new \Exception('Not set any features');
         }
 
         foreach ($features as $feature) {
@@ -106,7 +106,7 @@ class DataFeatures
             }
 
             if (false === in_array($availFeature, $this->availFeatures)) {
-                throw \Exception(sprintf('Feature \'%s\' not available in API', $feature));
+                throw new \Exception(sprintf('Feature \'%s\' not available in API', $feature));
             }
         }
 
@@ -122,18 +122,18 @@ class DataFeatures
     {
         foreach ($settings as $name => $value) {
             if (false === in_array($name, $this->availSettings)) {
-                throw \Exception(sprintf('Setting \'%s\' not available in API', $name));
+                throw new \Exception(sprintf('Setting \'%s\' not available in API', $name));
             }
 
             if ($name == 'lang') {
                 if (strlen($value) > 2 || false == is_string($value)) {
-                    throw \Exception(sprintf('Setting \'%s\' not correct', $name));
+                    throw new \Exception(sprintf('Setting \'%s\' not correct', $name));
                 }
 
                 $this->settings[$name] = trim($value, '/');
             } else {
                 if (false == is_integer($value)) {
-                    throw \Exception(sprintf('Setting \'%s\' not correct', $name));
+                    throw new \Exception(sprintf('Setting \'%s\' not correct', $name));
                 }
 
                 $this->settings[$name] = (int) $value;
@@ -159,7 +159,7 @@ class DataFeatures
     public function setMethod($method)
     {
         if (false === in_array($method, $this->availMethods)) {
-            throw \Exception('This method don\'t support');
+            throw new \Exception('This method don\'t support');
         }
 
         $this->method = $method;
@@ -230,7 +230,7 @@ class DataFeatures
     protected function getDataResourse()
     {
         if (!isset($this->query{0})) {
-            throw \Exception("Don't set query! Use setQuery() method.");
+            throw new \Exception("Don't set query! Use setQuery() method.");
         }
 
         // Features part of resource
